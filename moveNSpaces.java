@@ -12,12 +12,10 @@ public class moveNSpaces {
       System.out.print("Enter a number: ");
       int n = Integer.parseInt(scan.nextLine());
 
-
       byte[] ascii = a.getBytes();
       byte[] ascii2 = t.getBytes();
       byte[] ascii3 = u.getBytes();
       byte[] ascii4 = v.getBytes();
-;
 
       System.out.println(Character.toString(ascii[0] + n));
       System.out.println(Character.toString(ascii2[0] + n));
