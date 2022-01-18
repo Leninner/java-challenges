@@ -3,22 +3,31 @@ import java.util.Scanner;
 public class EcuacionSegundoGrado {
   public static void main(String[] args) {
     try(Scanner scan = new Scanner(System.in)){
-      // FIXME: Arreglar el problema de NaN
-      
-      double a, b, c, x1, x2;
+    
+      double valueA, valueB, valueC;
 
       System.out.print("Ingrese el valor de a: ");
-      a = scan.nextDouble();
+      valueA = scan.nextDouble();
+
       System.out.print("Ingrese el valor de b: ");
-      b = scan.nextDouble();
+      valueB = scan.nextDouble();
+
       System.out.print("Ingrese el valor de c: ");
-      c = scan.nextDouble();
+      valueC = scan.nextDouble();
 
-      x1 =(float) (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
-      x2 =(float) (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+      double discriminante = Math.pow(valueB, 2) - 4 * valueA * valueC;
 
-      System.out.println(x1);
-      System.out.println(x2);
+      if(valueA == 0 || valueB == 0 || valueC == 0){
+        System.out.println("No se puede resolver la ecuacion, no se aceptan valores iguales a 0");
+      } else if(discriminante < 0){
+        System.out.println("No tiene soluciones reales");
+      } else {
+        double raizOne =  (-valueB + Math.sqrt(discriminante)) / (2 * valueA);
+        double raizTwo =  (-valueB - Math.sqrt(discriminante)) / (2 * valueA);
+
+        System.out.println(Math.round(raizOne));
+        System.out.println(Math.round(raizTwo));
+      }
     }
   }
 }
