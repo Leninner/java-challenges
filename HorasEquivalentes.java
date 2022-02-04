@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class HorasEquivalentes {
   public static void main(String[] args) {
-    try(Scanner scan = new Scanner(System.in)){
+
+    try (Scanner scan = new Scanner(System.in)) {
       System.out.print("Ingrese el total de horas: ");
       
       int horasTotales = scan.nextInt();
@@ -13,5 +14,6 @@ public class HorasEquivalentes {
       System.out.println("El equivalente en dias es: " + dias);
       System.out.println("El equivalente en horas es: " + horasTotales);
     }
+    
   }
 }

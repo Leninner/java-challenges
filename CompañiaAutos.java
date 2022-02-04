@@ -10,7 +10,7 @@ public class CompañiaAutos {
       float commissionPerCar = carsSold * 150;
       float percentajePerCar = 0;
 
-      for(int i=0; i<carsSold; i++){
+      for(int i=0; i < carsSold; i++){
         System.out.println("Ingrese el precio del carro " + (i + 1) + ": ");
         float priceCar = entrada.nextFloat();
         percentajePerCar += priceCar * 0.05f;
