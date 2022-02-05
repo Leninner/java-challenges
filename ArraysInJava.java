@@ -16,5 +16,14 @@ public class ArraysInJava {
       System.out.println(numbers[i]);
       System.out.println(names[i]);
     }
+
+    for (int i = numbers.length - 1; i > 0; i--) {
+      System.out.println(numbers[i]);
+      System.out.println(names[i]);
+    }
+
+    System.out.println(numbers.length);
+    System.out.println(names.length);
+    System.out.println(name.length);
   }
 }
