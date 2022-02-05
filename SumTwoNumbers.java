@@ -8,8 +8,7 @@ class SumTwoNumbers {
             System.out.println("Enter another number: ");
             int num2 = scanner.nextInt();
             System.out.println("The sum of " + num1 + " and " + num2 + " is " + (num1 + num2));
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }

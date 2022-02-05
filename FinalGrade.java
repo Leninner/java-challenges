@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class FinalGrade {
   public static void main(String[] args) {
-    try(Scanner scan = new Scanner(System.in)){
+    try (Scanner scan = new Scanner(System.in)) {
       System.out.println("Ingresa las notas del estudiante: ");
 
       System.out.print("Nota 1: ");

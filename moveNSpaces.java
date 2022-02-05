@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class moveNSpaces {
   public static void main(String[] args) {
-    try(Scanner scan = new Scanner(System.in)){
+    try (Scanner scan = new Scanner(System.in)) {
       System.out.println("Enter 4 letters: ");
       String a = scan.nextLine();
       String t = scan.nextLine();

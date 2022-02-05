@@ -20,13 +20,13 @@ public class Calculadora {
         JOptionPane.showMessageDialog(null, "Resultado de la multiplicación: " + (valueOne * valueTwo));
         break;
       case 'D':
-        if(valueTwo == 0){
+        if (valueTwo == 0) {
           JOptionPane.showMessageDialog(null, "No se puede dividir por cero");
         } else {
           JOptionPane.showMessageDialog(null, "El resultado de la división es: " + (valueOne / valueTwo));
         }
         break;
-    
+
       default:
         JOptionPane.showMessageDialog(null, "Operador no válido, pórtate vivo");
         break;

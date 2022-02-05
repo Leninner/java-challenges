@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class CuadradoDeUnaSuma {
   public static void main(String[] args) {
-    try(Scanner scan = new Scanner(System.in)){
+    try (Scanner scan = new Scanner(System.in)) {
       System.out.print("Ingrese un número: ");
       float numberOne = scan.nextFloat();
       System.out.print("Ingrese otro número: ");
