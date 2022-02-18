@@ -2,52 +2,57 @@ import java.util.Scanner;
 
 public class Pruebas {
   public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
-    int saldo = 1000;
-    System.out.println("Ingresa tu nombre");
-    String nameUser = scan.nextLine();
-    int retiro = 0;
-    int deposito = 0;
+    try (Scanner scan = new Scanner(System.in)) {
 
-    System.out.println("¿Qué quiéres hacer hoy? " + nameUser + " Retiro(R), Depósito(D), Consultar(C)");
+      int saldo = 1000;
+      System.out.println("Ingresa tu nombre");
+      String nameUser = scan.nextLine();
+      int retiro = 0;
+      int deposito = 0;
 
-    char option = scan.nextLine().toUpperCase().charAt(0);
+      System.out.println("¿Qué quiéres hacer hoy? " + nameUser + " Retiro(R), Depósito(D), Consultar(C)");
 
-    switch (option) {
-      case 'R':
+      char option = scan.nextLine().toUpperCase().charAt(0);
 
-        System.out.println("Ingresa la cantidad de dinero que quieres");
-        retiro = scan.nextInt();
-        saldo -= retiro;
+      switch (option) {
+        case 'R':
 
-        if (retiro <= saldo) {
-          System.out.println("Haz recibido " + retiro);
-          System.out.println("Te queda " + saldo);
-        } else {
-          System.out.println("Eres pobre, no tienes esa cantidad de dinero");
-        }
+          System.out.println("Ingresa la cantidad de dinero que quieres");
+          retiro = scan.nextInt();
+          saldo -= retiro;
 
-        break;
+          if (retiro <= saldo) {
+            System.out.println("Haz recibido " + retiro);
+            System.out.println("Te queda " + saldo);
+          } else {
+            System.out.println("Eres pobre, no tienes esa cantidad de dinero");
+          }
 
-      case 'D':
-        System.out.println("Ingresa cuánto dinero quiéres depositar");
-        deposito = scan.nextInt();
+          break;
 
-        if (deposito > 0) {
-          System.out.println("Tu saldo actual es " + saldo);
-          saldo += deposito;
-          System.out.println("Tu saldo actual con el depósito es " + saldo);
-        } else {
-          System.out.println("Estás pendejo");
-        }
-        break;
+        case 'D':
+          System.out.println("Ingresa cuánto dinero quiéres depositar");
+          deposito = scan.nextInt();
 
-      case 'C':
-        System.out.println("Tu saldo actual es: " + saldo);
-        break;
+          if (deposito > 0) {
+            System.out.println("Tu saldo actual es " + saldo);
+            saldo += deposito;
+            System.out.println("Tu saldo actual con el depósito es " + saldo);
+          } else {
+            System.out.println("Estás pendejo");
+          }
+          break;
 
-      default:
-        System.out.println("Error 404, cómprate una vida");
+        case 'C':
+          System.out.println("Tu saldo actual es: " + saldo);
+          break;
+
+        default:
+          System.out.println("Error 404, cómprate una vida");
+      }
+
+    } catch (Exception e) {
+      System.out.println("Haz  bien las cosas");
     }
   }
 }
