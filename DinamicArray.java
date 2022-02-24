@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
+// Source: https://www.youtube.com/watch?v=pM8684UA6BM
+
 public class DinamicArray {
 
   private static void listaNormal() {
