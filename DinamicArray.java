@@ -38,7 +38,7 @@ public class DinamicArray {
   }
 
   public static void main(String[] args) {
-    // listaNormal();
+    listaNormal();
     listaDinamica();
   }
 
