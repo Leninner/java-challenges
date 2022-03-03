@@ -35,6 +35,10 @@ public class DinamicArray {
     for (int i = 0; i < names.size(); i++) {
       System.out.println(names.get(i));
     }
+
+    // 10,5,6, 10 ,7,9,10 => numeritos
+    // numeritos.indexOf(10) => 0
+    // numeritos.lastIndexOf(10) => 6
   }
 
   public static void main(String[] args) {

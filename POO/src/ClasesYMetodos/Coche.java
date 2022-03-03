@@ -6,9 +6,16 @@ public class Coche {
   String marca;
   int km;
 
+  // Método Constructor
+  public Coche(String _nombre, String _color, int _km) {
+    color = _color;
+    marca = _nombre;
+    km = _km;
+  }
+
   // Métodos
-  public void arrancar() {
-    System.out.println("Arrancando el coche");
+  public void arrancar(String marca, String color) {
+    System.out.println("El coche de marca " + marca + " de color " + color + " está arrancando");
   }
 
   public void acelerar() {
