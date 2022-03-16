@@ -37,10 +37,10 @@ public class Matrices {
     // isSimetric = false;
     // }
 
-    // if (isSimetric) {
-    // System.out.println("La matriz es simétrica");
+    // if (isSymmetric) {
+    // System.out.println("La matrix es symmetrical");
     // } else {
-    // System.out.println("No es simétrica");
+    // System.out.println("No es symmetrical");
     // }
 
     // JOptionPane.showMessageDialog(null, result);
@@ -50,7 +50,6 @@ public class Matrices {
     int sumaTotal = 0;
 
     for (int i = 0; i < 10; i++) {
-      //
       System.out.println(sumaTotal + i);
       sumaTotal += i;
     }
