@@ -7,6 +7,7 @@ public class CollatzConjectureRevisited {
     System.out.print("Ingresa un número entero positivo: ");
 
     int collatzConjectures = scan.nextInt();
+    scan.close();
 
     for (int i = 1; i <= collatzConjectures; i++) {
       int j = i;
