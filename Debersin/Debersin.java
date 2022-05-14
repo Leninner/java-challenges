@@ -1,3 +1,5 @@
+package Debersin;
+
 import java.util.Scanner;
 
 public class Debersin {
