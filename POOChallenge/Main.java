@@ -3,7 +3,7 @@ package POOChallenge;
 import java.util.Scanner;
 
 public class Main {
-    public static int getCheapestVehicleIndex(Vehicle[] vehicles){
+    public static int getCheapestVehicleIndex(Vehicle[] vehicles) {
         int cheapestVehicleIndex = 0;
 
         for (int i = 1; i < vehicles.length; i++) {
@@ -44,6 +44,8 @@ public class Main {
 
             vehicles[i] = new Vehicle(vehicleBrand, vehicleModel, vehiclePrice);
         }
+
+        scan.close();
 
         System.out.println("\nEl coche mas barato es: ");
         System.out.println(vehicles[getCheapestVehicleIndex(vehicles)].showVehicleInfo());
