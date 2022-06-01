@@ -16,6 +16,7 @@ public class Vehicle {
     }
 
     public String showVehicleInfo() {
-        return "Vehicle brand: " + vehicleBrand + "\nVehicle model: " + vehicleModel + "\nVehicle price: " + vehiclePrice;
+        return "Vehicle brand: " + vehicleBrand + "\nVehicle model: " + vehicleModel + "\nVehicle price: "
+                + vehiclePrice;
     }
 }

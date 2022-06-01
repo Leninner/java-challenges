@@ -52,5 +52,8 @@ public class IMC {
       System.out.printf("%25s%s", "", "Obesidad morbida(obesidad de grado IV)");
     }
 
+    scan.close();
+    System.out.println(patientName);
+
   }
 }
