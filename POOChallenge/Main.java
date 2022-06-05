@@ -3,37 +3,39 @@ package POOChallenge;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Ingrese el número de atletas: ");
-        int numberAtletas = scan.nextInt();
+    public static String getLargestPerimeter(Triangulo[] triangulos) {
+        Triangulo maxPerimeter = triangulos[0];
 
-        Atletismo[] atletas = new Atletismo[numberAtletas];
-
-        for (int i = 0; i < numberAtletas; i++) {
-            System.out.println("Ingrese el número de atleta: ");
-            System.out.print("-> ");
-            int numberAtleta = scan.nextInt();
-
-            System.out.println("Ingrese el nombre del atleta: ");
-            System.out.print("-> ");
-            String nameAtleta = scan.next();
-
-            System.out.println("Ingrese el tiempo del atleta: ");
-            System.out.print("-> ");
-            double timeAtleta = scan.nextDouble();
-
-            atletas[i] = new Atletismo(numberAtleta, nameAtleta, timeAtleta);
-        }
-
-        Atletismo winnerAtleta = atletas[0];
-
-        for (int i = 0; i < numberAtletas; i++) {
-            if (atletas[i].getTimeAtleta() < winnerAtleta.getTimeAtleta()) {
-                winnerAtleta = atletas[i];
+        for (Triangulo triangulo : triangulos) {
+            if (triangulo.getPerimeter() > maxPerimeter.getPerimeter()) {
+                maxPerimeter = triangulo;
             }
         }
+        return maxPerimeter.getInfo();
+    }
 
-        System.out.println("El atleta ganador de la carrera es: " + winnerAtleta.getAtletaInfo());
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingrese el numero de triangulos: ");
+        System.out.print("-> ");
+        int n = scan.nextInt();
+
+        Triangulo[] triangulos = new Triangulo[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Ingrese el lado uno y dos del triangulo " + (i + 1) + ": ");
+            System.out.print("-> ");
+            float sideOne = scan.nextFloat();
+
+            System.out.println("Ingrese la base del triangulo " + (i + 1) + ": ");
+            System.out.print("-> ");
+            float base = scan.nextFloat();
+
+            triangulos[i] = new Triangulo(sideOne, base);
+
+        }
+
+        System.out.println("El triangulo de mayor perimetro es: " +  getLargestPerimeter(triangulos));
+
     }
 }
