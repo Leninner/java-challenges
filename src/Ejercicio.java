@@ -2,25 +2,21 @@ package src;
 
 import java.util.Scanner;
 
-public class Ejercicio {
+public class ejercicio {
   public static void main(String[] args) {
-    /**
-     * Resolver una ecuación lineal: y = (x + 3)^2
-     */
 
-    float valorNegativo, valorPositivo, aumento;
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Ingresa un nombre de usuario de Twitter");
+    String nombre = scan.nextLine();
 
-    try (Scanner scan = new Scanner(System.in)) {
-      System.out.print("Dime un valor negativo para tu tabla de valores: ");
-      valorNegativo = scan.nextFloat();
-      System.out.print("Dime un valor positivo para tu tabla de valores: ");
-      valorPositivo = scan.nextFloat();
-      System.out.print("Pasos: ");
-      aumento = scan.nextFloat();
+    String regexnombre = "^@([a-zA-Z0-9_]{1,15})$";
 
-      for (float i = valorNegativo; i <= valorPositivo; i += (aumento)) {
-        System.out.println("El valor en y, cuando x vale " + i + " es " + Math.pow((i + 3), 2));
-      }
+    if (nombre.matches(regexnombre)) {
+      System.out.println("El nombre de usuario es correcto");
+    } else {
+      System.out.println("El nombre de usuario no es correcto");
     }
+    scan.close();
+
   }
 }

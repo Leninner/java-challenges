@@ -1,6 +1,5 @@
 package src;
 
-import java.util.Hashtable;
 import java.util.Scanner;
 
 public class NumbersToWords {
@@ -31,7 +30,7 @@ public class NumbersToWords {
         }
     }
 
-    public static String getDecenas (int number) {
+    public static String getDecenas(int number) {
         switch (number) {
             case 1:
                 return "ten";
@@ -99,11 +98,11 @@ public class NumbersToWords {
             unidad = number % 10;
             decena = number / 10;
 
-            if(number == 100) {
+            if (number == 100) {
                 wordNumber = "one hundred";
-            } else if(number >= 10 && number <= 19) {
+            } else if (number >= 10 && number <= 19) {
                 wordNumber = elevenToNineteen(number);
-            } else if(number == 0) {
+            } else if (number == 0) {
                 wordNumber = "zero";
             } else {
                 wordNumber = getDecenas(decena) + " " + getUnidades(unidad);
@@ -113,6 +112,6 @@ public class NumbersToWords {
 
             System.out.println("\nIngresar otro número? (negativos para " +
                     "terminar)");
-        } while(number >= 0);
+        } while (number >= 0);
     }
 }
