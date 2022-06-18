@@ -113,5 +113,7 @@ public class NumbersToWords {
             System.out.println("\nIngresar otro número? (negativos para " +
                     "terminar)");
         } while (number >= 0);
+
+        scan.close();
     }
 }
