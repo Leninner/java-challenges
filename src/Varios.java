@@ -1,47 +1,47 @@
 package src;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.Scanner;
 
 public class Varios {
+  static Scanner scan = new Scanner(System.in);
+
+  public static File createFile() {
+    System.out
+        .print("Introduce el nombre del archivo y  su extensión. \nEl archivo será guardado en el directorio Dev: ");
+    String name = scan.nextLine();
+    File file = new File("D:\\Dev\\" + name);
+
+    if (file.exists()) {
+      System.out.println("Un archivo con ese nombre ya existe");
+      return file;
+    } else {
+      try {
+        file.createNewFile();
+        System.out.println("Archivo creado con éxito");
+        return file;
+      } catch (IOException e) {
+        return null;
+      }
+
+    }
+  }
 
   public static void main(String ars[]) throws IOException {
-
-    // Creando ruta del archivo y contenido
-    String ruta = "D:\\Dev\\index.js";
-    String contenido = "const sayHello = () => console.log('Hello World Done with JavaScript and Deno');\n"
-        + "sayHello();";
-
-    // Creando archivo
-    File file = new File(ruta);
-
-    // Si el archivo no existe es creado
-    if (!file.exists()) {
-      file.createNewFile();
-    }
-
     // Instancias para escribir en el archivo
-    FileWriter fw = new FileWriter(file);
+    FileWriter fw = new FileWriter(createFile());
     BufferedWriter bw = new BufferedWriter(fw);
-    bw.write(contenido);
-    bw.close();
 
-    // Instancias para leer el archivo y ejecutar un proceso en la consola
-    Process process = Runtime.getRuntime().exec("deno run " + ruta);
+    System.out.println("Ingresa la información que quiéres escribir en el archivo");
+    String contenido = scan.nextLine();
 
-    // Mostrar la ejecución del archivo en la consola
-    InputStream is = process.getInputStream();
-    BufferedInputStream bis = new BufferedInputStream(is);
-    int i = bis.read();
-
-    while (i != -1) {
-      System.out.print((char) i);
-      i = bis.read();
+    for (int i = 0; i < contenido.length(); i++) {
+      bw.write(contenido.charAt(i) + " ");
     }
 
+    bw.close();
   }
 }
